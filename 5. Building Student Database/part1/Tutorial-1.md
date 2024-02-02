@@ -1,0 +1,1 @@
+## [Learn SQL by Building a Student Database: Part 1](https://github.com/freeCodeCamp/learn-sql-by-building-a-student-database-part-1/blob/main/TUTORIAL.md?plain=1)
