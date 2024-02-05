@@ -1,0 +1,77 @@
+    1  echo hello terminal
+    2  touch bike-shop.sh
+    3  chmod +x bike-shop.sh 
+    4  ./bike-shop.sh 
+    5  ./bike-shop.sh 
+    6  ./bike-shop.sh 
+    7  ./bike-shop.sh 
+    8  ./bike-shop.sh 
+    9  ./bike-shop.sh 
+   10  ./bike-shop.sh 
+   11  ./bike-shop.sh 
+   12  ./bike-shop.sh 
+   13  ./bike-shop.sh 
+   14  ./bike-shop.sh 
+   15  ./bike-shop.sh 
+   16  ./bike-shop.sh 
+   17  ./bike-shop.sh 
+   18  ./bike-shop.sh 
+   19  ./bike-shop.sh 
+   20  ./bike-shop.sh 
+   21  [[ a =~ [0-9] ]]; echo $?
+   22  [[ a1 =~ [0-9] ]]; echo $?
+   23  [[ a1 =~ ^[0-9]$ ]]; echo $?
+   24  [[ 1 =~ ^[0-9]$ ]]; echo $?
+   25  [[ 11 =~ ^[0-9]$ ]]; echo $?
+   26  [[ 11 =~ ^[0-9]+$ ]]; echo $?
+   27  [[ 11 !=~ ^[0-9]+$ ]]; echo $?
+   28* 
+   29  [[ 11 !=~ ^[0-9]+$ ]]; echo $? 11 =~ ^[0-9]+$ ]]; echo $?
+   30  [[ 11 !=~ ^[0-9]+$ ]]; echo $? 11 =~ ^[0-9]+$ ]]; echo $? 11 =~ ^[0-9]+$ ]]; echo $?
+   31  [[ ! 11 =~ ^[0-9]+$ ]]; echo $?
+   32  ./bike-shop.sh 
+   33  ./bike-shop.sh 
+   34  ./bike-shop.sh 
+   35  ./bike-shop.sh 
+   36  ./bike-shop.sh 
+   37  ./bike-shop.sh 
+   38  ./bike-shop.sh 
+   39  echo '28 | Mountain' | sed 's/ /=/g'
+   40  echo '28 | Mountain' | sed 's/ //g'
+   41  echo '28 | Mountain' | sed 's/ //'
+   42  echo '28 | Mountain' | sed 's/ |//'
+   43  echo '28 | Mountain' | sed 's/ |//"'
+   44  echo '28 | Mountain' | sed 's/ |//\"'
+   45  echo '28 | Mountain' | sed -e 's/ |//\"'
+   46  echo '28 | Mountain' | sed -e 's/ |/\"/'
+   47  echo '28 | Mountain' | sed 's/ |/\"/'
+   48  echo '28 | Mountain' | sed 's/ |/"/'
+   49  ./bike-shop.sh 
+   50  ./bike-shop.sh 
+   51  echo ' M e '
+   52  echo "$(echo ' M e ')."
+   53  echo "$(echo ' M e ' | sed 's/ //')."
+   54  echo "$(echo ' M e ' | sed 's/ //g')."
+   55  echo "$(echo ' M e ' | sed 's/^ //g')."
+   56  echo "$(echo '   M e ' | sed 's/^ //g')."
+   57  echo "$(echo '   M e ' | sed 's/^ *//g')."
+   58  echo "$(echo '   M e ' | sed 's/^ * $//g')."
+   59  echo "$(echo '   M e ' | sed 's/ $//g')."
+   60  echo "$(echo '   M e   ' | sed 's/ $//g')."
+   61  echo "$(echo '   M e   ' | sed 's/ *$//g')."
+   62  echo "$(echo '   M e   ' | sed 's/^ *| *$//g')."
+   63  man sed
+   64  echo -e "$(echo '   M e   ' | sed 's/^ *| *$//g')."
+   65  echo "$(echo '   M e   ' | sed -e 's/^ *| *$//g')."
+   66  echo "$(echo '   M e   ' | sed -E 's/^ *| *$//g')."
+   67  ./bike-shop.sh 
+   68  ./bike-shop.sh 
+   69  ./bike-shop.sh 
+   70  ./bike-shop.sh 
+   71  ./bike-shop.sh 
+   72  ./bike-shop.sh 
+   73  ./bike-shop.sh 
+   74  ./bike-shop.sh 
+   75  ./bike-shop.sh 
+   76  ./bike-shop.sh 
+   77  history > bash.txt

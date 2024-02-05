@@ -1,0 +1,78 @@
+\l
+create database bikes;
+\l
+\c bikes 
+create table bikes();
+\d
+alter table bikes add column bike_id serial; alter table bikes add primary key(bike_id);
+\d
+\d bikes
+alter table bikes add column type varchar(50) not null;
+\d bikes;
+alter table bikes add column size int not null;
+alter table bikes add column available boolean not null default TRUE;
+\d bikes;
+create table customers();
+alter table customers add column customer_id serial; alter table customers add primary key(customer_id);
+\d customers;
+alter table customers add column phone varchar(15) not null unique;
+alter table customers add column name varchar(40) not null;
+\d customers;
+create table rentals();
+alter table rentals add column rental_id serial; alter table rentals add primary key(rental_id);
+\d rentals;
+alter table rentals add column customer_id int not null;
+alter table rentals add foreign key(customer_id) references customers(customer_id);
+\d rentals;
+alter table rentals add column bike_id int not null;
+alter table rentals add foreign key(bike_id) references bikes(bike_id);
+\d rentals;
+alter table rentals add column date_rented date not null default now();
+\d rentals;
+alter table rentals add column date_returned date;
+\d rentals;
+\d
+\d bikes;
+\d customers;
+\d rentals;
+insert into bikes(type, size) values('Mountain', 27);
+select * from bikes;
+insert into bikes(type, size) values('Mountain', 28);
+insert into bikes(type, size) values('Mountain', 29);
+insert into bikes(type, size) values('Road', 27);
+select * from bikes;
+insert into bikes(type, size) values('Road', 28), ('Road', 29);
+insert into bikes(type, size) values('BMX', 19), ('BMX', 20), ('BMX', 21);
+select * from bikes;
+update bikes set available=false where available=true;
+update bikes set available=true where available=false and type != 'BMX';
+update bikes set available=true;
+select * from customers;
+\d rentals;
+select * from rentals;
+select * from bikes;
+select * from rentals;
+select * from bikes;
+select * from bikes order_by bike_id;
+select * from bikes order by bike_id;
+select * from bikes order by bike_id;
+select * from customers;
+select * from rentals;
+select * from bikes;
+select * from bikes left join rentals using(bike_id);
+select * from bikes inner join rentals using(bike_id);
+select * from bikes inner join rentals using(bike_id) inner join customer using(customer_id);
+select * from bikes inner join rentals using(bike_id) inner join customers using(customer_id);
+select * from bikes inner join rentals using(bike_id) inner join customers using(customer_id) where phone='555-5555' and date_returned is null;
+select bikes.bike_id, type, size from bikes inner join rentals using(bike_id) inner join customers using(customer_id) where phone='555-5555' and date_returned is null;
+select bike_id, type, size from bikes inner join rentals using(bike_id) inner join customers using(customer_id) where phone='555-5555' and date_returned is null;
+select bike_id, type, size from bikes inner join rentals using(bike_id) inner join customers using(customer_id) where phone='555-5555' and date_returned is null order by bike_id;
+select * from rentals inner join cusomers using(customer_id);
+select * from rentals inner join customers using(customer_id);
+select * from rentals inner join customers using(customer_id) where phone='555-5555' and bike_id=1 and date_returned is null;
+select date_rented from rentals inner join customers using(customer_id) where phone='555-5555' and bike_id=1 and date_returned is null;
+select date_returned from rentals inner join customers using(customer_id) where phone='555-5555' and bike_id=1 and date_returned is null;
+select rental_id from rentals inner join customers using(customer_id) where phone='555-5555' and bike_id=1 and date_returned is null;
+select * from rentals;
+select * from bikes order by bike_id;
+\s
