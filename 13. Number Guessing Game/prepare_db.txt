@@ -1,0 +1,33 @@
+---------------------------------------------------------------------
+1.Prepare database
+---------------------------------------------------------------------
+
+psql --username=freecodecamp --dbname=postgres
+CREATE DATABASE number_guess;
+\c number_guess;
+
+CREATE TABLE users(
+	user_id SERIAL NOT NULL, 
+	username VARCHAR(22) NOT NULL
+);
+
+CREATE TABLE games(
+ 	game_id SERIAL NOT NULL, 
+ 	user_id INTEGER NOT NULL, 
+ 	number_of_guesses INTEGER DEFAULT 0 NOT NULL
+);
+
+---------------------------------------------------------------------
+2. Primary Key and Foreign Key assignment
+---------------------------------------------------------------------
+
+ALTER TABLE users ADD PRIMARY KEY (user_id);
+ALTER TABLE games ADD PRIMARY KEY (game_id);
+ALTER TABLE games ADD FOREIGN KEY (user_id) REFERENCES users (user_id);
+
+---------------------------------------------------------------------
+3.Compact sql db schema into number_guess.sql
+---------------------------------------------------------------------
+
+quit
+pg_dump -cC --inserts -U freecodecamp number_guess > number_guess.sql
